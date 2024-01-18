@@ -121,9 +121,17 @@
                 <pre>{{ curl_result | safe }}</pre>
                 <h4>OpenSSL Result:</h4>
                 <pre>{{ openssl_result | safe }}</pre>
+                <a href="/" class="button">Run Another Test</a>
             </div>
         {% endfor %}
-        <a href="/" class="button">Run Another Test</a>
+        <div class="result-section">
+            <h2>Conclusion</h2>
+            <p>The Quantum-Safe Cryptography Tester has completed the tests using the specified cryptographic algorithms and configurations. Below, you'll find the results for each combination of algorithms and ports tested.</p>
+            <p>The results include the output from both the Curl and OpenSSL commands, allowing you to analyze the performance and behavior of the selected algorithms.</p>
+            <p>Review the results to assess the suitability of the tested cryptographic algorithms for quantum-safe cryptography in your applications. If you have any questions or need further assistance, please feel free to reach out.</p>
+            <a href="/" class="button">Run Another Test</a>
+        </div>
+        
     </section>
 </body>
 </html>
