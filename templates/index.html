@@ -56,7 +56,10 @@
          color: #ffffff;
          font-weight: bold;
          }
-         .button {
+         .button, 
+         .button:link, 
+         .button:visited,
+         input[type="submit"].button {
          display: inline-block;
          font-size: 18px;
          color: #ffffff;
@@ -66,11 +69,19 @@
          border-radius: 5px;
          cursor: pointer;
          margin-top: 20px;
+         text-decoration: none;
+         text-align: center;
+         width: auto;
+         padding: 10px 15px;
          }
-         .button:hover {
+         .button:hover,
+         .button:active,
+         input[type="submit"].button:hover, 
+         input[type="submit"].button:active {
          background: #333;
          }
          .showcase {
+         text-align: center;
          margin-top: 30px;
          margin-bottom: 30px;
          }
@@ -81,7 +92,12 @@
          .showcase p {
          font-size: 18px;
          }
-         /* Loading module styles */
+         .test-buttons {
+         display: flex;
+         justify-content: center;
+         gap: 20px; 
+         flex-wrap: wrap; 
+         }
          #loading-module {
          display: none;
          text-align: center;
@@ -117,34 +133,32 @@
       </header>
       <section class="container showcase">
          <h1>Welcome to the Quantum-Safe Cryptography Tester</h1>
-         <p>This tool helps you test and verify the implementation of quantum-safe cryptographic algorithms in a TLS handshake. By clicking "Run Test," you'll initiate a sequence of operations that use Docker to execute curl and OpenSSL commands, testing different quantum-safe cryptographic algorithms on a test server.</p>
-         <form id="test-form" action="/run-test" method="post">
-            <!-- "Run Test" button with loading module -->
-            <button id="run-test-button" type="button" class="button">Run Test</button>
-            <div id="loading-module">
-               <div class="loading-spinner"></div>
-               <p>Loading...</p>
-            </div>
-         </form>
+         <p>This tool helps you test and verify the implementation of quantum-safe cryptographic algorithms in a TLS handshake...</p>
+         <div class="test-buttons">
+            <!-- Invisible form to submit when the connection test button is clicked -->
+            <form id="test-form" action="/run-test" method="post" style="display: none;"></form>
+            <!-- Visible connection test button -->
+            <a href="#" id="run-connection-test" class="button">Run Connection Test</a>
+            <a href="/tls-perf/run-tls-perf-test" class="button">TLS Handshake Performance Test</a>
+            <a href="/alg-perf/run-alg-perf-test" class="button">Algorithm Performance Test</a>
+         </div>
+         <!-- Loading module -->
+         <div id="loading-module">
+            <div class="loading-spinner"></div>
+            <p>Loading...</p>
+         </div>
       </section>
       <script>
-         const testForm = document.getElementById("test-form");
-         const runTestButton = document.getElementById("run-test-button");
-         const loadingModule = document.getElementById("loading-module");
-         
-         // Add an event listener to the button click
-         runTestButton.addEventListener("click", function () {
-             // Hide the "Run Test" button
-             runTestButton.style.display = "none";
-             
-             // Show the loading module
-             loadingModule.style.display = "block";
-             
-             setTimeout(() => {
-                 // Submit the form
+         const runConnectionTestButton = document.getElementById('run-connection-test');
+         const testForm = document.getElementById('test-form');
+         const loadingModule = document.getElementById('loading-module');
+         const buttonsContainer = document.querySelector('.test-buttons');
+         runConnectionTestButton.addEventListener('click', function(event) {
+             event.preventDefault();
+             buttonsContainer.style.display = 'none';
+             loadingModule.style.display = 'block';
+             setTimeout(function() {
                  testForm.submit();
              }, 3000); // Simulated delay of 3 seconds
          });
       </script>
-   </body>
-</html>

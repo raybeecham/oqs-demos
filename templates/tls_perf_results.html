@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>TLS Handshake Performance Results</title>
+      <link rel="stylesheet" href="/static/style.css">
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <div id="branding">
+               <h1>Quantum-Safe Cryptography Tester</h1>
+            </div>
+            <nav>
+               <ul>
+                  <li class="current"><a href="/">Home</a></li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <section class="container">
+         <h2>TLS Handshake Performance Results</h2>
+         <p>
+            The TLS handshake performance results provide insights into the speed and efficiency of TLS (Transport Layer Security) handshakes using quantum-safe cryptographic algorithms. These handshakes are crucial for secure communication over the internet.
+         </p>
+         <pre>{{ tls_perf_result }}</pre>
+         <p>
+            The results above display the performance metrics for TLS handshakes, including the duration of handshakes using specific quantum-safe algorithms such as dilithium and kyber. These metrics help assess the efficiency of quantum-safe cryptography in securing communications against potential quantum threats.
+         </p>
+         <p>
+            You can adjust the test parameters, including the duration and the choice of quantum-safe algorithms, to evaluate their performance in different scenarios.
+         </p>
+         <a href="/" class="button">Back to Home</a>
+         <a href="http://127.0.0.1:5000/tls-perf/run-tls-perf-test" class="button">Run Another Test</a>
+      </section>
+   </body>
+</html>

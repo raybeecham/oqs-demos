@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Algorithm Performance Results</title>
+      <link rel="stylesheet" href="/static/style.css">
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <div id="branding">
+               <h1>Quantum-Safe Cryptography Tester</h1>
+            </div>
+            <nav>
+               <ul>
+                  <li class="current"><a href="/">Home</a></li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <section class="container">
+         <h2>Algorithm Performance Results</h2>
+         <p>
+            The algorithm performance results provide insights into the speed and efficiency of cryptographic algorithms. These tests measure how quickly each algorithm performs essential cryptographic operations.
+         </p>
+         <pre>{{ alg_perf_result }}</pre>
+         <p>
+            The results above display the performance metrics for the tested algorithms. Faster algorithms may be preferred for certain applications, while others may prioritize security over speed. The choice of algorithm depends on the specific requirements of your project.
+         </p>
+         <a href="/" class="button">Back to Home</a>
+         <a href="http://127.0.0.1:5000/alg-perf/run-alg-perf-test" class="button">Run Another Test</a>
+      </section>
+   </body>
+</html>
