@@ -22,7 +22,7 @@ All standard `curl` parameters are available plus the option to explicitly reque
 
 ## Performance testing
 
-The docker image can also be used to execute performance tests using the different algoritms supported: 
+The docker image can also be used to execute performance tests using the different algorithms supported: 
 
 
 ### TLS handshake performance
