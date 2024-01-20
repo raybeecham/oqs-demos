@@ -83,22 +83,19 @@
                return false;
             }
          
-         document.addEventListener("DOMContentLoaded", function() {
-             var form = document.getElementById("tls-test-form");
-             var runTestButton = form.querySelector(".run-test-button");
-             var loadingModule = document.querySelector(".loading-module");
-             
-             runTestButton.addEventListener("click", function(event) {
-                 event.preventDefault(); 
-                 runTestButton.style.display = "none";
-                 loadingModule.style.display = "block"; 
-         
-                 setTimeout(function() {
-                     form.submit(); 
-                 }, 3000); 
-             });
-         });
-         });
-      </script>
-   </body>
+            // If all validations pass, show the loading module and submit the form
+            var loadingModule = document.querySelector(".loading-module");
+            var runTestButton = document.querySelector(".run-test-button");
+
+            runTestButton.style.display = "none"; // Hide the submit button
+            loadingModule.style.display = "block"; // Show loading module
+            
+
+            // Simulate a delay for loading (if needed) and then submit the form
+            setTimeout(function() {
+                event.target.submit(); // This submits the form
+            }, 3000); // Adjust the timeout as needed
+        });
+    </script>
+</body>
 </html>
